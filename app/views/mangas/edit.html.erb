@@ -1,0 +1,36 @@
+<h1>Edit Manga</h1>
+<%= form_with model: @manga, url: manga_path(@manga), method: :patch, local: true do |form| %>
+  <p>
+    <%= form.label :manga_title %><br>
+    <%= form.text_field :manga_title %>
+  </p>
+
+  <p>
+    <%= form.label :author %><br>
+    <%= form.text_field :author %>
+  </p>
+
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+
+  <p>
+    <%= form.label :genre_tag %><br>
+    <%= form.text_field :genre_tag %>
+  </p>
+
+  <p>
+    <%= form.label :cover_image %><br>
+    <% if @manga.cover_image.attached? %>
+      <%= image_tag(@manga.cover_image) %><br>
+      <%= form.check_box :remove_cover_image %>
+      <%= form.label :remove_cover_image, "Remove cover image" %>
+    <% end %>
+    <%= form.file_field :cover_image %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

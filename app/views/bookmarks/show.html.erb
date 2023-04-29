@@ -1,0 +1,6 @@
+<h1>Bookmark</h1>
+
+<p><strong>Chapter:</strong> <%= @bookmark.chapter.title %></p>
+
+<%= link_to "Edit", edit_bookmark_path(@bookmark) %> |
+<%= link_to "Back to Bookmarks", bookmarks_path %>

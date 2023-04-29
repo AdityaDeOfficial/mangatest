@@ -1,0 +1,7 @@
+<h1><%= @manga.manga_title %></h1>
+<p><%= @manga.author %></p>
+<p><%= @manga.description %></p>
+<p><%= @manga.genre_tag %></p>
+<% if @manga.cover_image.attached? %>
+  <%= image_tag(@manga.cover_image) %>
+<% end %>

@@ -1,0 +1,6 @@
+<%= form_for @bookmark do |f| %>
+  <%= f.label :chapter_id %>
+  <%= f.collection_select(:chapter_id, Chapter.all, :id, :title) %>
+
+  <%= f.submit %>
+<% end %>

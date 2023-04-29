@@ -1,0 +1,10 @@
+<h1>New Bookmark</h1>
+
+<%= form_for @bookmark do |f| %>
+  <%= f.label :chapter_id %>
+  <%= f.collection_select(:chapter_id, Chapter.all, :id, :title) %>
+
+  <%= f.submit "Save" %>
+<% end %>
+
+<%= link_to "Back to Bookmarks", bookmarks_path %>

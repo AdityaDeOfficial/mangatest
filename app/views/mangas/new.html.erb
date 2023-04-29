@@ -1,0 +1,31 @@
+<h1>New Manga</h1>
+<%= form_with model: @manga, url: mangas_path, local: true do |form| %>
+  <p>
+    <%= form.label :manga_title %><br>
+    <%= form.text_field :manga_title %>
+  </p>
+
+  <p>
+    <%= form.label :author %><br>
+    <%= form.text_field :author %>
+  </p>
+
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+
+  <p>
+    <%= form.label :genre_tag %><br>
+    <%= form.text_field :genre_tag %>
+  </p>
+
+  <p>
+    <%= form.label :cover_image %><br>
+    <%= form.file_field :cover_image %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
